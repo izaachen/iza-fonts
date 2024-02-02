@@ -1,4 +1,4 @@
-# iza-fonts
+# IZA Fonts
 Fonts following corporate design guidelines
 Download the font files from the [releases](https://github.com/izaachen/iza-fonts/releases) page.
 
@@ -27,3 +27,13 @@ Add the following snippet to your index.html
    body { font-family: var(--font-sans-serif); }
 </style>
 ```
+# iza-fonts (wordpress)
+
+This package is a Wordpress plugin that manages everything for you.
+
+- Download the latest release
+- Go to your Wordpress admin panel
+- Go to Plugins > Add New
+- Click on Upload Plugin
+- Select the zip file and click on Install Now
+- Activate the plugin
