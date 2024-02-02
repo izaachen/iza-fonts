@@ -9,3 +9,4 @@ rm -f README.md
 cat src/readme/README-base.md >> README.md
 cat src/readme/README-desktop.md >> README.md
 cat src/readme/README-web.md >> README.md
+cat src/readme/README-wordpress.md >> README.md
