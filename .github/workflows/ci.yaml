@@ -26,7 +26,10 @@ jobs:
          -  name: Load Release Description from README
             id: readme
             run: |
-               readme_content=$(sed ':a;N;$!ba;s/\n/<br \/>/g' readme/README-usecase.md)
+               readme_content=$(cat readme/README-usecase.md)
+               readme_content="${readme_content//'%'/'%25'}"
+               readme_content="${readme_content//$'\n'/'%0A'}"
+               readme_content="${readme_content//$'\r'/'%0D'}"
                echo "::set-output name=body::$readme_content"
 
          -  name: Create Release
