@@ -1,0 +1,9 @@
+@import 'font-index.css';
+
+:root {
+   --font-sans-serif: Vazirmatn, Asap, sans-serif;
+   --font-serif: Amiri, 'Source Serif 4', serif;
+}
+body {
+   font-family: var(--font-sans-serif);
+}

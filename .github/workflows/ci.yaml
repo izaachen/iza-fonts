@@ -1,0 +1,62 @@
+name: Build and Release
+
+on:
+   push:
+      branches:
+         - main
+
+jobs:
+   build-and-release:
+      runs-on: ubuntu-latest
+
+      steps:
+         -  name: Checkout code
+            uses: actions/checkout@v2
+
+         -  name: Run build script
+            run: ./build.sh
+
+         -  name: Read version from package.json
+            id: package_version
+            run: echo "::set-output name=version::$(jq -r .version package.json)"
+
+         -  name: Create Release
+            id: create_release
+            uses: actions/create-release@v1
+            env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            with:
+               tag_name: v${{ steps.package_version.outputs.version }}
+               release_name: Release v${{ steps.package_version.outputs.version }}
+               draft: false
+               prerelease: false
+
+         -  name: Upload font-desktop asset
+            uses: actions/upload-release-asset@v1
+            env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            with:
+               upload_url: ${{ steps.create_release.outputs.upload_url }}
+               asset_path: ./dist/font-desktop-${{ steps.package_version.outputs.version }}.zip
+               asset_name: font-desktop-${{ steps.package_version.outputs.version }}.zip
+               asset_content_type: application/zip
+
+         -  name: Upload font-web asset
+            uses: actions/upload-release-asset@v1
+            env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            with:
+               upload_url: ${{ steps.create_release.outputs.upload_url }}
+               asset_path: ./dist/font-web-${{ steps.package_version.outputs.version }}.zip
+               asset_name: font-web-${{ steps.package_version.outputs.version }}.zip
+               asset_content_type: application/zip
+
+         -  name: Upload font-wordpress asset
+            uses: actions/upload-release-asset@v1
+            env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            with:
+               upload_url: ${{ steps.create_release.outputs.upload_url }}
+               asset_path: ./dist/font-wordpress-${{ steps.package_version.outputs.version }}.zip
+               asset_name: font-wordpress-${{ steps.package_version.outputs.version }}.zip
+               asset_content_type: application/zip

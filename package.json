@@ -1,0 +1,17 @@
+{
+   "name": "iza-fonts",
+   "version": "1.0.0",
+   "description": "Fonts following corporate design guidelines",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/izaachen/iza-fonts.git"
+   },
+   "author": "Jonas Gnioui",
+   "homepage": "https://github.com/izaachen/iza-fonts",
+   "devDependencies": {
+      "prettier": "^3.2.4"
+   }
+}
