@@ -1,4 +1,4 @@
-# iza-fonts (web)
+## iza-fonts (web)
 
 Add the following snippet to your index.html
 ```html
@@ -10,4 +10,14 @@ Add the following snippet to your index.html
    }
    body { font-family: var(--font-sans-serif); }
 </style>
+```
+
+The following font-families are available for any usage:
+```css
+font-family: "Asap";
+font-family: "Asap Condensed";
+font-family: "Asap Expanded";
+font-family: "Source Serif 4";
+font-family: "Amiri";
+font-family: "Vazirmatn";
 ```

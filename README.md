@@ -13,11 +13,36 @@ Download the font files from the [releases](https://github.com/izaachen/iza-font
 **Sans-Serif**
 - Vazirmatn (arabic)
 - Asap (latin)
-# iza-fonts (desktop)
+## iza-fonts (desktop)
 
 - Extract the zip file
 - Mark all the font files and right-click to install them
-# iza-fonts (web)
+## iza-fonts (wordpress)
+
+This package is a Wordpress plugin that manages everything for you.
+
+- Download the latest release
+- Go to your Wordpress admin panel
+- Go to Plugins > Add New
+- Click on Upload Plugin
+- Select the zip file and click on Install Now
+- Activate the plugin
+
+By default, page font will be set to:
+```css
+body { font-family: Vazirmatn, Asap, sans-serif; }
+```
+
+The following font-families are available for any usage:
+```css
+font-family: "Asap";
+font-family: "Asap Condensed";
+font-family: "Asap Expanded";
+font-family: "Source Serif 4";
+font-family: "Amiri";
+font-family: "Vazirmatn";
+```
+## iza-fonts (web)
 
 Add the following snippet to your index.html
 ```html
@@ -30,13 +55,13 @@ Add the following snippet to your index.html
    body { font-family: var(--font-sans-serif); }
 </style>
 ```
-# iza-fonts (wordpress)
 
-This package is a Wordpress plugin that manages everything for you.
-
-- Download the latest release
-- Go to your Wordpress admin panel
-- Go to Plugins > Add New
-- Click on Upload Plugin
-- Select the zip file and click on Install Now
-- Activate the plugin
+The following font-families are available for any usage:
+```css
+font-family: "Asap";
+font-family: "Asap Condensed";
+font-family: "Asap Expanded";
+font-family: "Source Serif 4";
+font-family: "Amiri";
+font-family: "Vazirmatn";
+```
