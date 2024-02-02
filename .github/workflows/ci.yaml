@@ -25,7 +25,9 @@ jobs:
 
          -  name: Load Release Description from README
             id: readme
-            run: echo "::set-output name=body::$(cat readme/README-usecase.md)"
+            run: |
+               readme_content=$(cat readme/README-usecase.md | jq -Rs .)
+               echo "::set-output name=body::${readme_content}"
 
          -  name: Create Release
             id: create_release
