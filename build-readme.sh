@@ -6,7 +6,9 @@
 rm -f README.md
 
 # Concat the readme files together
-cat src/readme/README-base.md >> README.md
-cat src/readme/README-desktop.md >> README.md
-cat src/readme/README-web.md >> README.md
-cat src/readme/README-wordpress.md >> README.md
+cat readme/README-header.md >> README.md
+cat readme/README-usecase.md >> README.md
+cat readme/README-content.md >> README.md
+cat readme/README-desktop.md >> README.md
+cat readme/README-web.md >> README.md
+cat readme/README-wordpress.md >> README.md

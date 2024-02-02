@@ -23,6 +23,10 @@ jobs:
             id: package_version
             run: echo "::set-output name=version::$(jq -r .version package.json)"
 
+         -  name: Load Release Description from README
+            id: readme
+            run: echo "::set-output name=body::$(cat readme/README-usecase.md)"
+
          -  name: Create Release
             id: create_release
             uses: actions/create-release@v1
@@ -31,6 +35,7 @@ jobs:
             with:
                tag_name: v${{ steps.package_version.outputs.version }}
                release_name: Release v${{ steps.package_version.outputs.version }}
+               body: ${{ steps.readme.outputs.body }}
                draft: false
                prerelease: false
 
