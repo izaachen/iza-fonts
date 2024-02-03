@@ -5,13 +5,13 @@
 # Create output dir at dist/font-wordpress if not exist
 mkdir -p dist
 
-# Clear contents of dist/font-wordpress
-rm -rf dist/font-wordpress*
-
 # Read the version number from the package.json file
 VERSION=$(node -p -e "require('./package.json').version")
+contentDir=iza-wordpress-fonts
+buildDir=dist/$contentDir
 
-buildDir=dist/font-wordpress-$VERSION
+# Clear contents of dist/font-wordpress
+rm -rf $buildDir*
 
 # Create the buildDir
 mkdir -p $buildDir
@@ -63,7 +63,7 @@ sed -i'' -e "s/{{ package.description }}/$DESCRIPTION/g" "$buildDir/iza-wordpres
 cd dist || exit 1
 
 # Use zip if available, else use tar
-zip -r font-wordpress-$VERSION.zip font-wordpress-$VERSION
+zip -r font-wordpress-$VERSION.zip $contentDir
 
 cd .. || echo exit 1
 
