@@ -63,7 +63,7 @@ sed -i'' -e "s/{{ package.description }}/$DESCRIPTION/g" "$buildDir/iza-wordpres
 cd dist || exit 1
 
 # Use zip if available, else use tar
-zip -r font-wordpress-$VERSION.zip $contentDir
+zip -r fonts-wordpress-$VERSION.zip $contentDir
 
 cd .. || echo exit 1
 
@@ -71,6 +71,6 @@ cd .. || echo exit 1
 rm -rf $buildDir
 
 # Print the release zip file path
-echo "dist/font-wordpress-$VERSION.zip"
+echo "dist/fonts-wordpress-$VERSION.zip"
 
 exit 0

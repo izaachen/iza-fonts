@@ -29,7 +29,7 @@ cp -r src/fonts/*/desktop/* $buildDir
 cd dist || exit 1
 
 # Use zip if available, else use tar
-zip -r font-desktop-$VERSION.zip font-desktop-$VERSION
+zip -r fonts-desktop-$VERSION.zip font-desktop-$VERSION
 
 cd .. || echo exit 1
 
@@ -37,6 +37,6 @@ cd .. || echo exit 1
 rm -rf $buildDir
 
 # Print the release zip file path
-echo "dist/font-desktop-$VERSION.zip"
+echo "dist/fonts-desktop-$VERSION.zip"
 
 exit 0

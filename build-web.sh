@@ -40,7 +40,7 @@ cp package.json $buildDir
 cd dist || exit 1
 
 # Use zip if available, else use tar
-zip -r font-web-$VERSION.zip font-web-$VERSION
+zip -r fonts-web-$VERSION.zip font-web-$VERSION
 
 cd .. || echo exit 1
 
@@ -48,6 +48,6 @@ cd .. || echo exit 1
 rm -rf $buildDir
 
 # Print the release zip file path
-echo "dist/font-web-$VERSION.zip"
+echo "dist/fonts-web-$VERSION.zip"
 
 exit 0
