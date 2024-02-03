@@ -1,6 +1,6 @@
 {
    "name": "iza-fonts",
-   "version": "1.0.7",
+   "version": "1.0.8",
    "description": "Fonts following corporate design guidelines",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
    "author": "Jonas Gnioui",
    "homepage": "https://github.com/izaachen/iza-fonts",
    "devDependencies": {
+      "@prettier/plugin-php": "^0.22.1",
       "prettier": "^3.2.4"
    }
 }

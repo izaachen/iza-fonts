@@ -5,6 +5,9 @@ const config = {
    singleQuote: true,
    bracketSameLine: true,
    singleAttributePerLine: false,
+   phpVersion: '8.2',
+   braceStyle: '1tbs',
+   plugins: ['@prettier/plugin-php'],
 };
 
 module.exports = config;
