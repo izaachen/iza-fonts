@@ -83,9 +83,11 @@ function checkUpdatesFromGithub($transient) {
 
          // Optionally, immediately start the update process
          // Note: Automatic update without user action can be risky
+         /*
          require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
          $upgrader = new Plugin_Upgrader();
          $upgrader->upgrade("$wpPluginSlug/$wpPluginSlug.php");
+         */
       }
    }
 
