@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Retrieve updates from GitHub
  */
@@ -26,7 +25,7 @@ function checkUpdatesFromGithub($transient) {
    $isCacheOld = false;
    if (file_exists($cacheCreatedFile)) {
       $cacheCreated = file_get_contents($cacheCreatedFile);
-      $cacheCreatedTimestamp = intval($cacheCreated);
+      $cacheCreatedTimestamp = (int)$cacheCreated;
       $currentTimestamp = time();
       $diff = $currentTimestamp - $cacheCreatedTimestamp;
       if ($diff > 3600) {
@@ -50,7 +49,7 @@ function checkUpdatesFromGithub($transient) {
       $releaseData = json_decode(wp_remote_retrieve_body($response), true);
    }
 
-   if (!empty($releaseData) && !$releaseData['message']) {
+   if (!empty($releaseData) && !isset($releaseData['message'])) {
       // Cache the response in a file
       $time = time();
       $cacheFile = plugin_dir_path(__FILE__) . $cacheFilename;
